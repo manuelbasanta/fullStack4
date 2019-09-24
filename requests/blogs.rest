@@ -1,13 +1,34 @@
-// Get all blog
-GET http://localhost:3003/api/blogs
+// Get all blogs
+GET http://localhost:3001/api/blogs
 ###
 
-POST http://localhost:3003/api/blogs
+//Get single blog by ID
+GET http://localhost:3001/api/blogs/5d7f041a16b80e197e49f253
+###
+
+// Delete blog by ID
+DELETE http://localhost:3001/api/blogs/5d89902645e1ad6df572ae73
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlRFU1RfVVNFUiIsImlkIjoiNWQ4OThhOTdjY2I1YzE2ZDE3MDM0N2ExIiwiaWF0IjoxNTY5Mjk1MDI0fQ.0PjMJLwJtnKBPoEkDezu17pHm2RpMNrl-p4dCdqELQI
+###
+// Add new blog
+POST http://localhost:3001/api/blogs
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlRFU1RfVVNFUiIsImlkIjoiNWQ4OThhOTdjY2I1YzE2ZDE3MDM0N2ExIiwiaWF0IjoxNTY5Mjk1MDI0fQ.0PjMJLwJtnKBPoEkDezu17pHm2RpMNrl-p4dCdqELQI
+
+{
+    "title": "test blog",
+    "author": "someone",
+    "url": "http://localhost:3003",
+    "likes": 15
+}
+###
+// Change blog by ID
+PUT http://localhost:3001/api/blogs/5d843a6fbda2e2481ca2bd42
 Content-Type: application/json
 
 {
-    "title": "second blog",
+    "title": "jooot",
     "author": "Manuel",
     "url": "http://localhost:3003",
-    "likes": 15
+    "likes": 11
 }
